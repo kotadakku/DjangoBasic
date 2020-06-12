@@ -1,0 +1,5 @@
+{% for i in obj %}
+<a href="{{ i.get_absolute_url }}">{{i.title}}</a><br>
+{% endfor %}
+<br>
+<a href="./create">Create</a>

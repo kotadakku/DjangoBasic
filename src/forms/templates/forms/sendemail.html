@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="{% url 'forms:send' %}" method="post">
+    <label for="">Name</label>{{ e.name }}<br>
+    <label for="">Content</label>{{ e.content }}<br>
+    <label for="">Email</label>{{ e.email }}<br>
+    <label for="">CC</label>{{ e.cc }}<br>
+    {% csrf_token %}
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

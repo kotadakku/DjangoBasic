@@ -1,0 +1,4 @@
+
+{% for i in object_list %}
+<p>{{ i.id }} - <a href="{% url 'courses:detail' i.id %}">{{ i.title}}</a></p>
+{% endfor%}

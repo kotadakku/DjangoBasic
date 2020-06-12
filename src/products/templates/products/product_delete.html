@@ -1,0 +1,6 @@
+<form action="/products/delete/{{object.id}}" method="POST">
+    <p>Do you want to delete the product "{{object.title}}"</p>
+    {% csrf_token %}
+    <p><input type="submit" value="Yes"><a href="../">Cancel</a> </p>
+</form>
+

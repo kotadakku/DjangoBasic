@@ -1,0 +1,16 @@
+{% extends 'polls/base.html' %}
+{% block content%}
+
+
+<h5>{{question.question_text}}</h5>
+<h5>Please choice !</h5>
+    <form method="post" action="{% url 'polls:vote' question.id %}">
+    {%for i in question.choice_set.all %}
+        {% csrf_token %}
+        <input type="radio"  value="{{ i.id }}" name="choice">{{ i.choice }}<br>
+
+    {% endfor %}
+        <input type="submit" value="Send">
+    </form>
+<a href="{% url 'polls:index' %}">List question ?</a>
+{% endblock%}

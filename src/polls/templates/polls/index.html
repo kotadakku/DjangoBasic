@@ -1,0 +1,14 @@
+{% extends 'polls/base.html'%}
+{% block content %}
+<h5>This is IndexPage</h5>
+<h5>Please select question</h5>
+{% if data %}
+<ul>
+    {% for i in data %}
+    <li><a href="{% url 'polls:detail' i.id %}">{{i.question_text }}</li>
+    {% endfor%}
+</ul>
+{% else %}
+<p>No polls are available</p>
+{% endif %}
+{% endblock%}
